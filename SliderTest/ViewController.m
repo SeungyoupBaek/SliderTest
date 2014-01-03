@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end
 
@@ -24,6 +25,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)progressChanged:(UISlider *)sender {
+    UISlider *slider = sender;
+    _label.text = [NSString stringWithFormat:@"Value : %f", slider.value];
 }
 
 @end
